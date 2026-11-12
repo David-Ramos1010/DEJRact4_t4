@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CrudrapidoApplication<crudrapido>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.davidramos1010.crudrapido.CrudrapidoApplication",
+            "projectName": "crudrapido",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
