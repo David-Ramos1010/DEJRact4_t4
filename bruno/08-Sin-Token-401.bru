@@ -1,0 +1,15 @@
+meta {
+  name: 08 Endpoint protegido SIN token (debe dar 401)
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:8087/api/films
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 401
+}

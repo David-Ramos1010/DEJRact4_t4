@@ -1,0 +1,35 @@
+meta {
+  name: 04 Films - Crear
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8087/api/films
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkYXZpZEBleGFtcGxlLmNvbSIsImlhdCI6MTc5NDQ4MDg3MSwiZXhwIjoxNzk0NTY3MjcxfQ.defA1qQzaJO3yo7bEnMtan4qwM4Yw0W2s7Qa7bkJNe8IhzUBMmdW67lbZYfZaaNY
+}
+
+body:json {
+  {
+    "title": "Pelicula de prueba",
+    "description": "Creada desde Bruno",
+    "rentalDuration": 5,
+    "rentalRate": 2.99,
+    "length": 110,
+    "rating": "PG",
+    "languageId": 1
+  }
+}
+
+assert {
+  res.status: eq 201
+}
+
+script:post-response {
+  bru.setEnvVar("filmId", res.body.id);
+}

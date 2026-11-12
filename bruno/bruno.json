@@ -1,0 +1,6 @@
+{
+  "version": "1",
+  "name": "DEJRact4 API",
+  "type": "collection",
+  "ignore": ["node_modules", ".git"]
+}

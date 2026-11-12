@@ -1,0 +1,31 @@
+meta {
+  name: 06 Films - Actualizar
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://localhost:8087/api/films/1000
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkYXZpZEBleGFtcGxlLmNvbSIsImlhdCI6MTc5NDQ4MDg3MSwiZXhwIjoxNzk0NTY3MjcxfQ.defA1qQzaJO3yo7bEnMtan4qwM4Yw0W2s7Qa7bkJNe8IhzUBMmdW67lbZYfZaaNY
+}
+
+body:json {
+  {
+    "title": "Pelicula editada",
+    "description": "Actualizada desde Bruno",
+    "rentalDuration": 4,
+    "rentalRate": 3.49,
+    "length": 120,
+    "rating": "R",
+    "languageId": 1
+  }
+}
+
+assert {
+  res.status: eq 200
+}

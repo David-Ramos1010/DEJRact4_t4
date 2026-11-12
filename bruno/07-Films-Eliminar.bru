@@ -1,0 +1,19 @@
+meta {
+  name: 07 Films - Eliminar
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://localhost:8087/api/films/1001
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkYXZpZEBleGFtcGxlLmNvbSIsImlhdCI6MTc5NDQ4MDg3MSwiZXhwIjoxNzk0NTY3MjcxfQ.defA1qQzaJO3yo7bEnMtan4qwM4Yw0W2s7Qa7bkJNe8IhzUBMmdW67lbZYfZaaNY
+}
+
+assert {
+  res.status: eq 204
+}
